@@ -21,61 +21,61 @@ You can use either Python or Java to complete the project. (I chose Python)
 
 Python Socket Programming (using Python 3)
 If we use UDP sockets, we have the following code:
-Python code for the UDP client:
+# Python code for the UDP client:
 
-  from socket import *
+from socket import *
 
-  serverName = 'localhost'
-  serverPort = 5000
-  clientSocket = socket(AF_INET, SOCK_DGRAM)
-  message = input("Input a lowercase sentence: ")
-  clientSocket.sendto(message.encode(), (serverName, serverPort))
-  modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
-  print(modifiedMessage.decode())
-  clientSocket.close()
+serverName = 'localhost'
+serverPort = 5000
+clientSocket = socket(AF_INET, SOCK_DGRAM)
+message = input("Input a lowercase sentence: ")
+clientSocket.sendto(message.encode(), (serverName, serverPort))
+modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
+print(modifiedMessage.decode())
+clientSocket.close()
 
-Python code for the UDP server:
+# Python code for the UDP server:
 
-  from socket import *
+from socket import *
 
-  serverPort = 5000
-  serverSocket = socket(AF_INET, SOCK_DGRAM)
-  serverSocket.bind(('', serverPort))
-  print("The server is ready to receive.")
-  while True:
-     message, clientAddress = serverSocket.recvfrom(2048)
-     modifiedMessage = message.decode().upper()
-     print("message to be sent back: ")
-     print(modifiedMessage)
-  serverSocket.sendto(modifiedMessage.encode(), clientAddress)
+serverPort = 5000
+serverSocket = socket(AF_INET, SOCK_DGRAM)
+serverSocket.bind(('', serverPort))
+print("The server is ready to receive.")
+while True:
+   message, clientAddress = serverSocket.recvfrom(2048)
+   modifiedMessage = message.decode().upper()
+   print("message to be sent back: ")
+   print(modifiedMessage)
+serverSocket.sendto(modifiedMessage.encode(), clientAddress)
   
 If we use TCP sockets, we have the following code:
-Python code for the TCP client
+# Python code for the TCP client
 
-  from socket import *
+from socket import *
 
-  serverName = 'localhost'
-  serverPort = 5000
-  clientSocket = socket(AF_INET, SOCK_STREAM)
-  clientSocket.connect((serverName, serverPort))
-  sentence = input("Input a lowercase sentence: ")
-  clientSocket.send(sentence.encode())
-  modifiedSentence = clientSocket.recv(1024)
-  print(modifiedSentence.decode())
-  clientSocket.close()
+serverName = 'localhost'
+serverPort = 5000
+clientSocket = socket(AF_INET, SOCK_STREAM)
+clientSocket.connect((serverName, serverPort))
+sentence = input("Input a lowercase sentence: ")
+clientSocket.send(sentence.encode())
+modifiedSentence = clientSocket.recv(1024)
+print(modifiedSentence.decode())
+clientSocket.close()
   
-Python code for the TCP server
+# Python code for the TCP server
 
   from socket import *
 
-  serverPort = 5000
-  serverSocket = socket(AF_INET, SOCK_STREAM)
-  serverSocket.bind(('', serverPort))
-  serverSocket.listen(1)
-  print("The server is ready to receive.")
-  while True:
-      connectionSocket, addr = serverSocket.accept()
-      sentence = connectionSocket.recv(1024).decode()
-      capitalizedSentence = sentence.upper()
-      connectionSocket.send(capitalizedSentence.encode())
-      connectionSocket.close()
+serverPort = 5000
+serverSocket = socket(AF_INET, SOCK_STREAM)
+serverSocket.bind(('', serverPort))
+serverSocket.listen(1)
+print("The server is ready to receive.")
+while True:
+    connectionSocket, addr = serverSocket.accept()
+    sentence = connectionSocket.recv(1024).decode()
+    capitalizedSentence = sentence.upper()
+    connectionSocket.send(capitalizedSentence.encode())
+    connectionSocket.close()
