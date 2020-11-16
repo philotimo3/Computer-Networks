@@ -1,4 +1,6 @@
-# Computer-Networks, Socket Programming – String Converting Service
+# Computer-Networks
+
+Socket Programming – String Converting Service
 
 For this project I ran the given server code and edited the client code so that the client both allowed the user to continue to send multiple requests (instead of just one as it was originally written) stopped the program when the user typed in “Quit”. 
 
