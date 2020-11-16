@@ -1,4 +1,7 @@
 # Computer-Networks
+
+For this project I ran the given server code and edited the client code so that the client both allowed the user to continue to send multiple requests (instead of just one as it was originally written) stopped the program when the user typed in “Quit”. 
+
 Project 1 for Computer Networks class taken in Spring of 2020
 
 Background
