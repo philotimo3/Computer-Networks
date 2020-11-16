@@ -73,7 +73,8 @@ Java: MultiThreadDemo.java, MultiThreadDemo2.java, and MultiThreadDemo3.java
 Python: multithread.py, multithread2.py, and multithread3.py
 
 4. Submission
-You can use either Python or Java to complete the project. In either case, you are required to submit:
+You can use either Python or Java to complete the project. In either case, you are required to submit four files:
 •	The code for TCPStringServerPersistent. (preferred file name: TCPStringServerPersistent.py or TCPStringServerPersistent.java)
 •	The code for TCPStringClientPersistent. (preferred file name: TCPStringClientPersistent.py or TCPStringClientPersistent.java)
 •	The code for TCPStringServerPersistentMultithread. (preferred file name: TCPStringServerPersistentMultithread.py or TCPStringServerPersistentMultithread.java)
+•	The project report, which must include the testing you have run to verify that your code meets the requirements. You can paste what you got in the console or include some screenshots.
